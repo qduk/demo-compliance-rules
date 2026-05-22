@@ -25,4 +25,4 @@ class VLANMinMaxComplianceRule(DataComplianceRule):
                 }
             )
         
-custom_validators = list(CustomValidatorIterator()) + [VLANMinMaxComplianceRule]
+custom_validators = [VLANMinMaxComplianceRule]
