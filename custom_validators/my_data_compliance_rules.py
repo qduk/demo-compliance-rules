@@ -1,12 +1,13 @@
 from nautobot_data_validation_engine.custom_validators import (
     DataComplianceRule,
     ComplianceError,
+    CustomValidatorIterator
 )
 
 
 class VLANMinMaxComplianceRule(DataComplianceRule):
     model = "ipam.vlan"
-    enforce = False  # Report only, don't block changes
+    enforce = False
 
     MIN_VLAN = 11
     MAX_VLAN = 25
@@ -23,3 +24,5 @@ class VLANMinMaxComplianceRule(DataComplianceRule):
                     )
                 }
             )
+        
+custom_validators = list(CustomValidatorIterator()) + [VLANMinMaxComplianceRule]
