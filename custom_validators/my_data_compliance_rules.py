@@ -9,7 +9,7 @@ class VLANMinMaxComplianceRule(DataComplianceRule):
     enforce = False  # Report only, don't block changes
 
     MIN_VLAN = 11
-    MAX_VLAN = 500
+    MAX_VLAN = 25
 
     def audit(self):
         vlan = self.context["object"]
